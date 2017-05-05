@@ -59,4 +59,4 @@ Edit config.json to specify a real hostname and port.
 ## Acknowledgments
 
 * The Node.js docs for the net module.
-* Lodash as we always
+* Lodash as always
