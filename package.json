@@ -1,0 +1,25 @@
+{
+  "name": "terminal-server",
+  "version": "1.0.0",
+  "description": "A simple Node.js chat server implemented using the net module",
+  "main": "chat-server.js",
+  "scripts": {
+    "start": "node server/chat-server.js",
+    "test": "mocha"
+  },
+  "author": "Akrura Gordillo",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
+    "jscs": "^3.0.7",
+    "mocha": "^3.3.0",
+    "mocha-sinon": "^2.0.0",
+    "sinon": "^2.2.0",
+    "sinon-chai": "^2.10.0"
+  }
+}

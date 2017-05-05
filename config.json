@@ -1,0 +1,5 @@
+{
+  "host": "localhost",
+  "port": 23,
+  "maxConnections": 5
+}
