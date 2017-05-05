@@ -4,7 +4,7 @@ A terminal chat server implemented using Node.js net module.
 
 ### Prerequisites
 
-Only Node.js is required to run the server.
+Since the application uses ES6, the Node.js LTS (v6.10.3) is recommended to run the server.
 
 Running the tests requires, the Mocha, Chai, Sinon unit testing suite.
 
