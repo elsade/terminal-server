@@ -90,8 +90,8 @@ describe('Room tests', () => {
 
         chatroom.broadcast(tyrion, 'Hi, Jon.');
 
-        // tyrion did not receive his own message
-        expect(tyrion.socket.write).calledOnce;
+        // tyrion receives his own message
+        expect(tyrion.socket.write).calledTwice;
 
         // jon receives 'Tyrion > Hi, Jon.'
         jon.socket.write.withArgs('Tyrion > Hi, Jon.').calledOnce;
