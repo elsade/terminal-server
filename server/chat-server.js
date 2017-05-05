@@ -21,8 +21,6 @@ const actionProcessor = (action, room, user) => {
     user.setName(action.payload).then(() => {
       room.enter(user);
     }).catch((err) => {
-      // invalid name, re-prompt
-      assert(user.socket);
       user.socket.write('Invalid name: ' + err + '\n');
       user.socket.write('Please enter a valid name:' + '\n');
     });
@@ -40,12 +38,20 @@ const actionProcessor = (action, room, user) => {
 
   case 'USERS':
     assert(user.socket);
-    user.socket.write('Users: ' +  room.getUsers().join(',')  + '\n');
+    if(room.isUserInRoom(user.getName())) {
+      user.socket.write('Users: ' +  room.getUsers().join(',')  + '\n');
+    } else {
+      user.socket.write('Please enter a valid name:' + '\n');
+    }
     break;
 
   case 'ME':
-    // broadcast the emote and include the source user
-    room.broadcast(user, user.getName() + action.payload, true);
+    if(room.isUserInRoom(user.getName())) {
+      // broadcast the emote and include the source user
+      room.broadcast(user, user.getName() + action.payload, true);
+    } else {
+      user.socket.write('Please enter a valid name:' + '\n');
+    }
     break;
 
   default:
@@ -85,6 +91,7 @@ const createChatServer = () => {
         actionProcessor(action, chatroom, socket.user);
       } else {
         console.error('Unknown command, data: ', dataAsString);
+        socket.write('Unknown command: ' + dataAsString + '\n');
       }
     });
 

@@ -77,9 +77,11 @@ module.exports = () => {
       });
     },
     isUserInRoom: (name) => {
-      // assert preconditions
-      assert(name);
-      return findUserByName(name) ? true : false;
+      if(name) {
+        return findUserByName(name) ? true : false;
+      }
+
+      return false;
     },
     leave: (user) => {
       const index = _.indexOf(userList, user);
