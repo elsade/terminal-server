@@ -39,8 +39,7 @@ module.exports = () => {
     });
   };
 
-  // TODO: curry these
-  const broadcastMessage = message => broadcast(messageToChatMessage(message));
+  const broadcastMessage = message => broadcast(messageToChatMessage(message), true);
   const broadcastNotification = notification => broadcast({src: null, payload: notification});
 
   const duplicateValidator = (username) => {
