@@ -21,9 +21,14 @@ A terminal chat server implemented using Node.js net module.
 * When a user leaves, a 'USERNAME left' notification is broadcast'.
 * When a user leaves, they are no longer in the user list.     
 
-#### Stretch
+#### Stretch/Future Enhancements
 
 * Implement max connections.
+* Implement /help to give a list of supported client-side commands.
+* Implement server side commands to moderate the channel, boot users, and monitor usage.
+* Implement multiple rooms.
+* Scale to multiple servers using a message queue like RabbitMQ instead a single in-memory instance.
+* Saves messages to a persistent store.
 
 ### Prerequisites
 

@@ -100,7 +100,7 @@ describe('Action tests', () => {
       payload: '',
     });
 
-    // /em kicks the can -> ME
+    // /me kicks the can -> ME
     action = Actions.dataToAction('/me kicks the can', user);
     expect(_.pick(action, fields)).to.be.eql({
       type: 'ME',
@@ -121,5 +121,4 @@ describe('Action tests', () => {
 
     done();
   });
-
 });
