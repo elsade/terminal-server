@@ -2,25 +2,6 @@
 
 A terminal chat server implemented using Node.js net module.
 
-### Features/Requirements
-
-* Users can connect from a terminal application.
-* Implements a single global chat room.
-* Multiple users can connect (up to 5).     
-* Upon connecting, the user can enter their name.
-  * The name is validated and if the validation fails, the user is re-prompted to enter their username:
-    * The username contains too few characters.
-    * An existing user is already using a given name.
-    * The username starts with a '/', which is used for commands.
-* When the user enters the room, the last ten messages are displayed.
-* When the user types '/users' the list of connected users is displayed.
-* When the user types '/me kick the can', all users receive the message 'USERNAME kicks the can'
-* When the user types /quit' the user is disconnected.
-* When the user types a message, it is broadcast to the channel.
-* When the user enters the channel, a 'USERNAME joined' notification is broadcast.
-* When a user leaves, a 'USERNAME left' notification is broadcast'.
-* When a user leaves, they are no longer in the user list.     
-
 #### Stretch/Future Enhancements
 
 * Implement max connections.
